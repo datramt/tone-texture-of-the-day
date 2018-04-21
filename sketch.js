@@ -18,11 +18,11 @@ function setup() {
     amp = new p5.Amplitude();
 
     //init mix
-    mix.amp(0.5);
+    mix.amp(0);
     mix.connect();
 
     // init tone boolean
-    toneIsOn = true;
+    toneIsOn = false;
 
     // generate unique string for random seed using date
     uniqueString = "" + day() + month() + year();
