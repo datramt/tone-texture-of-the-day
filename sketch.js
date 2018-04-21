@@ -8,6 +8,8 @@ let soundSources = [];
 let quantityOfTones;
 let fft, mix;
 let toneIsOn;
+let ampSlider;
+
 //______________SETUP______________\\
 function setup() {
     createCanvas(400, 400);
@@ -17,8 +19,15 @@ function setup() {
     mix = new p5.Gain();
     amp = new p5.Amplitude();
 
+    //create volume slider
+    ampSlider = createSlider(0, 1, 0, 0.0001);
+    ampSlider.position(10, 10);
+    ampSlider.input(function applyAmp() {
+        mix.amp(ampSlider.value());
+    });
+
     //init mix
-    mix.amp(0);
+    mix.amp(0.0);
     mix.connect();
 
     // init tone boolean
