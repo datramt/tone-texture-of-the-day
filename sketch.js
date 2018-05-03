@@ -31,7 +31,7 @@ function setup() {
     mix.connect();
 
     // init tone boolean
-    toneIsOn = false;
+    toneIsOn = true;
 
     // generate unique string for random seed using date
     uniqueString = "" + day() + month() + year();
