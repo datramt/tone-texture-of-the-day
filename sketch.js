@@ -119,3 +119,9 @@ function keyPressed() {
         toneIsOn = !toneIsOn;
     }
 }
+
+function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+}
